@@ -9,7 +9,7 @@ import mongoose from "mongoose";
 import { db } from "./config/database";
 import { random } from "./helpers/index";
 import router from "./router"
-import session from "express-session";
+
 
 const app = express();
 const port = 3000;
@@ -23,15 +23,7 @@ app.use(compression());
 app.use(cookieParser());
 app.use(bodyParser.json());
 // Set up session middleware
-app.use(session({
-  secret: 'your-secret-key',
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-    secure: true,
-    maxAge: 3000        
-  } // Adjust as needed, set to true if using HTTPS
-}));
+
 
 
 const server = http.createServer(app);
