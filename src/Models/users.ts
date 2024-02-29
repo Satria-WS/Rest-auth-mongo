@@ -23,6 +23,7 @@ const userModel = new mongoose.Schema({
       type: String,
       select: false
     }
+
   }
 });
 
